@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { GetWildVideoComponent } from './get-wild-video/get-wild-video.component';
 import { GetWildVideoViewerComponent } from './get-wild-video-viewer/get-wild-video-viewer.component';
 import { GetWildVideoListComponent } from './get-wild-video-list/get-wild-video-list.component';
+import { GetWildVideoService } from './get-wild-video.service';
+import { GetWildStoreService } from './get-wild-store.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { GetWildVideoListComponent } from './get-wild-video-list/get-wild-video-
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    GetWildVideoService,
+    GetWildStoreService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
