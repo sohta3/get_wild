@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GetWildVideo } from "../get-wild-video";
 
 @Component({
   selector: 'app-get-wild-video-viewer',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./get-wild-video-viewer.component.css']
 })
 export class GetWildVideoViewerComponent implements OnInit {
+  @Input()
+  activeVideo: GetWildVideo;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

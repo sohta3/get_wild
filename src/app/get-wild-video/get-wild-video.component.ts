@@ -15,20 +15,12 @@ export class GetWildVideoComponent implements OnInit {
 
   ngOnInit() {
     this.getWildVideoService.fetch()
-      .subscribe(data => {
-        this.getWildStoreService.videoList = data.items.map(item => {
-          return new GetWildVideo(
-            item.id.videoId,
-            item.snippet.title,
-            item.snippet.thumbnails.high.url,
-            item.snippet.channelTitle,
-            item.snippet.channelId,
-            //moment(item.snippet.publishedAt).fromNow(),
-            item.snippet.description)
-        });
+    .subscribe((data) => {
+        this.getWildStoreService.videoList = data;
 console.dir(this.getWildStoreService)
-        this.getWildStoreService.activeVideo = this.getWildStoreService.videoList[0];
-      });
+    });
+
+    this.getWildStoreService.activeVideo = this.getWildStoreService.videoList[0];
   }
 
 }

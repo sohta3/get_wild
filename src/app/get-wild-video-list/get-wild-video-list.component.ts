@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GetWildVideo } from "../get-wild-video";
 
 @Component({
   selector: 'app-get-wild-video-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./get-wild-video-list.component.css']
 })
 export class GetWildVideoListComponent implements OnInit {
+  @Input()
+  videoList: GetWildVideo[];
 
   constructor() { }
 
