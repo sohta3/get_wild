@@ -17,10 +17,10 @@ export class GetWildVideoComponent implements OnInit {
     this.getWildVideoService.fetch()
     .subscribe((data) => {
         this.getWildStoreService.videoList = data;
+    this.getWildStoreService.activeVideo = data[0];
 console.dir(this.getWildStoreService)
     });
 
-    this.getWildStoreService.activeVideo = this.getWildStoreService.videoList[0];
   }
 
 }
